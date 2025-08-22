@@ -1,4 +1,3 @@
-
 Book Store MERN Stack Application
 A full-stack e-commerce application for managing and selling books, built with the MERN (MongoDB, Express.js, React, Node.js) stack. This project includes user authentication, a shopping cart, and a dedicated admin dashboard for managing products and orders.
 
@@ -11,13 +10,7 @@ Shopping Cart: A dynamic cart for adding, removing, and clearing books.
 
 Checkout & Order Management: A streamlined checkout process and a dedicated page to view placed orders.
 
-Admin Dashboard: A protected area for administrators to:
-
-Add new books.
-
-Update and delete existing books.
-
-Manage user data.
+Admin Dashboard: A protected area for administrators to add, update, and delete books.
 
 RTK Query: Efficient data fetching and caching with Redux Toolkit Query for a responsive user experience.
 
@@ -31,8 +24,6 @@ Redux Toolkit: For state management (shopping cart, API data).
 RTK Query: For powerful API data fetching and caching.
 
 SweetAlert2: For user-friendly pop-up notifications.
-
-Axios: For making HTTP requests to the backend.
 
 Backend (Node.js & Express.js)
 
@@ -61,7 +52,7 @@ git clone <repository_url>
 cd <repository_name>
 2. Install dependencies for the backend
 
-Navigate to the project root and install the Node.js dependencies.
+Navigate to the backend folder and install the dependencies.
 
 Bash
 
@@ -69,7 +60,7 @@ cd backend
 npm install
 3. Configure environment variables
 
-Create a .env file in the backend directory with the following variables:
+Create a .env file in the backend directory with your database connection string and JWT secret.
 
 PORT=5000
 MONGODB_URI=<your_mongodb_connection_string>
@@ -79,11 +70,9 @@ JWT_SECRET_KEY=<a_long_secret_string>
 Bash
 
 npm start
-The backend server will run on http://localhost:5000.
-
 5. Install dependencies for the frontend
 
-Open a new terminal, navigate to the frontend directory, and install the React dependencies.
+Open a new terminal, navigate to the frontend folder, and install the dependencies.
 
 Bash
 
@@ -94,13 +83,7 @@ npm install
 Bash
 
 npm run dev
-The frontend application will run on http://localhost:5173.
+The application should now be running on http://localhost:5173.
 
 🔒 Authentication & Authorization
-This application uses a JWT-based authentication system with a role-based access control.
-
-User Login: Regular users can log in and access features like the shopping cart and their order history.
-
-Admin Login: The /admin route is used for administrators to log in and access the protected dashboard.
-
-Protected Routes: Custom React components (PrivateRoute and AdminRoute) are used to protect routes on the frontend based on the user's authentication status and role. The backend also uses middleware to ensure API endpoints are only accessible with a valid and authorized token.
+This application uses a JWT-based authentication system with a role-based access control. The frontend uses custom components (PrivateRoute and AdminRoute) to protect routes, while the backend uses middleware to secure API endpoints based on the token's validity and the user's role.
